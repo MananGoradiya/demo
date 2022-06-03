@@ -1,0 +1,12 @@
+ls  	list the directory and files
+cd  	used to change the directory
+pwd 	used to see present working directry
+mkdir   used to create directory
+touch   used to create empty file
+rmdir	used to remove/delete directory
+cp	used to copy file
+mv	used to move file
+sudo su	used to switch to supper user
+cat filename.txt	used to open a file
+
+rm -rf == used to delete non empty directory

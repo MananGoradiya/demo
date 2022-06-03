@@ -1,0 +1,50 @@
+git config --global user.name
+git config --global user.email
+
+code . == this command opens VS code
+
+git init == initialises empty git repository
+
+git add index.html == adds file to git
+
+:wq == used to save and exit vim editor
+
+touch about.html == used to create empty file
+
+git add -A == used to add all the files in stagging area
+
+git commit -m "message to be passed" == used to commit directly without opening in vim
+
+git commit --amend == used to change the commit message
+
+git checkout index.html == used to undo the file
+
+git log == displays all the operations performed
+
+
+git diff == used to compare working file with the file in staging area
+
+git diff --staged == used to compare file in staged area with that of last commit
+
+git diff == this command is used to compare file of stagging area with that of current working tree
+
+git rm --cached index.html == this command is used to remove file from stagging area but file still remains in hard disk/ in other words it adds file to untracked area
+
+git branch feature1 == used to create new branch
+
+git checkout feature1 == used to change branch
+
+git remote set-url  == used to change the url
+
+git push == it is used to push the branch to github or other alternative
+
+git clone == used to clone repo from github
+
+git mv oldname.txt newname.txt == used to rename file in git
+
+git remote -v == to check origin
+
+git remote add origin <https link of repo> == to add origin
+
+git remote rm origin <https link> == to remove origin
+

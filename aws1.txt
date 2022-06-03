@@ -1,0 +1,13 @@
+iam ec2 s3 docker linux python node.js
+quicklabs
+draw.io
+cloud formation
+electromax
+amazon jobs
+talent.com
+apn partners
+
+
+
+sgp project
+cicd using teraform/cloudformation

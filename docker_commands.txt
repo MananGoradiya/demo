@@ -1,0 +1,113 @@
+
+all these commands are taken from      https://towardsdatascience.com/12-essential-docker-commands-you-should-know-c2d5a7751bb5
+
+
+sudo docker pull <name of image>   == used to pull images
+
+sudo docker iamges == used to get list of all iamges
+
+sudo docker run == used to create container from image
+EG)  sudo docker run  -it -d -p 80:80 --name alpinrcontainer nginx-alpine-image
+						name of container	name of image					
+
+sudo docker ps == we can use this command to list all the running containers
+
+sudo docker ps --all == used to list all containers including stopped one.
+
+sudo docker stop <container id> == used to stop the docker
+
+sudo docker restart <container id> == used to start the stopped container
+
+sudo docker rename oldname newname == used to rename the container
+
+sudo docker exec -i -t <container name> bash == uised to go inside the container
+
+exit == used to get out of container
+
+sudo docker rm <container name> == used to remove container 
+
+sudo docker rm -f <container name> == used to remove container forcefully
+
+sudo docker rmi <container ID> == used to remove image
+
+sudo docker volume create <volume name> == used to create volume
+
+sudo docker volume ls == used to get list of volumes
+
+sudo docker volume inspect <volume name> == used to get details of volume
+
+sudo docker volume rm <volume name> == used to remove volume
+
+sudo docker volume prune == used to remove all the volumes
+
+sudo docker inspect <container name> == used to inspect a container
+
+****************************************************************************************************************** 
+
+							VOLUME
+
+
+sudo docker run -it -d -p 80:80 \
+  --name=conC \
+  --mount source=batman,destination=/apps \
+  ubuntu
+
+the above command is used to run a image by attachiing a volume with it using mount command.
+--name== name of the container
+-destiantion== destination of director which you want to sync with volume
+
+
+
+sudo docker run -it -d -p 80:80 \
+  --name=conC \
+  --mount source=batman,destination=/apps,readonly \
+  ubuntu\
+
+
+the above command is used to run a image by attachiing a readonly volume with it using mount command.
+
+
+
+		
+sudo docker run -it -d -name <name of container> --volume <source(name of volume):destination(directory)> ubuntu
+sudo docker run -it -d --name conE --volume flash:/apps ubuntu
+the above command is used to run a image by attachiing a volume with it using volume command.
+
+
+*******************************************************************************************************************
+
+
+								BIND MOUNT
+
+
+sudo docker run -it -d --name conE --mount type=bind,source=$(pwd)/fun,target=/apps ubuntu
+
+the above command is used to run a docker container and attach a bind type of volume
+
+*********************************************************************************************************************
+
+								TMPFS
+
+
+sudo docker run -it -d --name tempcontainer --mount type=tmpfs,target=/apps ubuntu
+
+the above command is used to run a container and  atgtach an tmpfs storage with it using mount flag
+
+
+
+sudo docker run -it -d tempcontainer --tmpfs /apps ubuntu
+
+the above command is used to run a container and attach an tmpfs container wit it using tmpfs flag
+
+************************************************************************************************************************ 
+
+
+
+
+sudo docker swarm init == to initialize swarm
+
+sudo docker network create --driver overlay <network name> == used to create overlay network
+
+sudo docker service create --name fun-service --network fun-network --replicas 3 nginx:latest   == useed to create service in the given network with required no of replicas
+
+sudo docker service ps fun-service <service name> == used to know detailed info about service and replicas
